@@ -338,11 +338,11 @@ def convert_parquet_to_csv(parquet_file, csv_file):
     df.to_csv(csv_file, index=False, lineterminator='\n', encoding='utf-8')
 
 def main():
-    csv_file = '../MOCK_DATA.csv'
+    csv_file = 'MOCK_DATA.csv'
     parquet_file = 'MOCK_DATA.parquet'
-    decrypted_parquet_file = '../decrypted_MOCK_DATA.parquet'
+    decrypted_parquet_file = 'decrypted_MOCK_DATA.parquet'
     restored_csv_file = '../restored_MOCK_DATA.csv'
-    key_file = '../encryption_key.key'
+    key_file = 'encryption_key.key'
 
     # Convert CSV to Parquet
     convert_csv_to_parquet(csv_file, parquet_file)

@@ -341,7 +341,7 @@ def main():
     csv_file = 'MOCK_DATA.csv'
     parquet_file = 'MOCK_DATA.parquet'
     decrypted_parquet_file = 'decrypted_MOCK_DATA.parquet'
-    restored_csv_file = '../restored_MOCK_DATA.csv'
+    restored_csv_file = 'restored_MOCK_DATA.csv'
     key_file = 'encryption_key.key'
 
     # Convert CSV to Parquet

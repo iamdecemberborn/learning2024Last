@@ -1,0 +1,9 @@
+id TEXT
+first_name TEXT
+last_name TEXT
+email TEXT
+gender TEXT
+ip_address TEXT
+epochDate TEXT
+sqldatetime TEXT
+unixtimestamp TEXT

@@ -29,6 +29,7 @@
 # if __name__ == '__main__':
 #     main()
 # working code
+'''uploading local file to aws s3 bucket'''
 
 
 
@@ -83,7 +84,70 @@
 # if __name__ == '__main__':
 #     main()
 ### working code
+'''read csv file from s3 input folder , add one column and create in s3 output folder'''
 
+
+
+#
+# import boto3
+# import pandas as pd
+# from io import StringIO
+# import logging
+# # AWS S3 configuration
+# AWS_ACCESS_KEY = ''
+# AWS_SECRET_KEY = '/'
+# AWS_S3_BUCKET_NAME = ''
+# AWS_REGION = 'us-east-1'
+# INPUT_FOLDER = 'input/'
+# OUTPUT_FOLDER = 'output/'
+# FILE_NAME = 'MOCK_DATA.csv'
+# # Setup logger
+# logging.basicConfig(level=logging.INFO)
+# logger = logging.getLogger("S3DataTransfer")
+# def read_csv_from_s3(access_key, secret_key, region, bucket_name, folder, file_name):
+#     s3_client = boto3.client(
+#         's3',
+#         aws_access_key_id=access_key,
+#         aws_secret_access_key=secret_key,
+#         region_name=region
+#     )
+#     response = s3_client.get_object(Bucket=bucket_name, Key=folder + file_name)
+#     status = response.get("ResponseMetadata", {}).get("HTTPStatusCode")
+#     if status == 200:
+#         logger.info(f"Successfully fetched file from S3: {file_name}")
+#         print(f"Successfully fetched file from S3: {file_name}")
+#         csv_content = response['Body'].read().decode('utf-8')
+#         return pd.read_csv(StringIO(csv_content))
+#     else:
+#         logger.error(f"Failed to fetch file from S3. Status - {status}")
+#         print(f"Failed to fetch file from S3. Status - {status}")
+#         return None
+# def upload_csv_to_s3(access_key, secret_key, region, bucket_name, folder, file_name, dataframe):
+#     csv_buffer = StringIO()
+#     dataframe.to_csv(csv_buffer, index=False)
+#     s3_resource = boto3.resource(
+#         's3',
+#         aws_access_key_id=access_key,
+#         aws_secret_access_key=secret_key,
+#         region_name=region
+#     )
+#     s3_resource.Object(bucket_name, folder + file_name).put(Body=csv_buffer.getvalue())
+#     logger.info(f"Successfully uploaded file to S3: {folder + file_name}")
+#     print(f"Successfully uploaded file to S3: {folder + file_name}")
+# def main():
+#     logger.info('Starting the S3 data transfer script')
+#     print('Starting the S3 data transfer script')
+#     df = read_csv_from_s3(AWS_ACCESS_KEY, AWS_SECRET_KEY, AWS_REGION, AWS_S3_BUCKET_NAME, INPUT_FOLDER, FILE_NAME)
+#     if df is not None:
+#         # Directly save to the output folder in the same bucket without modification
+#         upload_csv_to_s3(AWS_ACCESS_KEY, AWS_SECRET_KEY, AWS_REGION, AWS_S3_BUCKET_NAME, OUTPUT_FOLDER, FILE_NAME, df)
+#     else:
+#         logger.error("No dataframe to process")
+#         print("No dataframe to process")
+# if __name__ == '__main__':
+#     main()
+### working
+'''read one csv file, and without any changes, placing s3 output folder bucket'''
 
 
 

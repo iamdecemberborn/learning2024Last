@@ -602,3 +602,37 @@
 
 
 
+
+import pandas as pd
+import os
+
+# Function to convert Parquet to CSV
+def convert_parquet_to_csv(input_parquet_path, output_csv_path):
+    try:
+        # Read the Parquet file into a DataFrame
+        df = pd.read_parquet(input_parquet_path, engine='pyarrow')
+
+        # Write the DataFrame to a CSV file
+        df.to_csv(output_csv_path, index=False)
+        print(f"Successfully converted {input_parquet_path} to {output_csv_path}")
+    except Exception as e:
+        print(f"Error converting {input_parquet_path} to CSV: {e}")
+
+# Paths for input Parquet files and output CSV directory
+input_parquet_files = [
+    "snappy.parquet"
+]
+output_directory = "snappy/"
+
+# Ensure the output directory exists
+os.makedirs(output_directory, exist_ok=True)
+
+# Convert each Parquet file to CSV
+for parquet_file in input_parquet_files:
+    # Generate the output CSV file path
+    file_name = os.path.basename(parquet_file).replace(".parquet", ".csv")
+    output_csv_path = os.path.join(output_directory, file_name)
+
+    # Convert the file
+    convert_parquet_to_csv(parquet_file, output_csv_path)
+

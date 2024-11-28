@@ -34,6 +34,8 @@
 
 
 
+
+
 # import boto3
 # import pandas as pd
 # from io import StringIO
@@ -150,6 +152,47 @@
 '''read one csv file, and without any changes, placing s3 output folder bucket'''
 
 
+#
+# import boto3
+# from pyspark.sql import SparkSession
+# import logging
+# # AWS S3 configuration
+# AWS_ACCESS_KEY = ''
+# AWS_SECRET_KEY = ''
+# AWS_S3_BUCKET_NAME = ''
+# AWS_REGION = 'us-east-1'
+# INPUT_FOLDER = 'input/'
+# OUTPUT_FOLDER = 'output/'
+# FILE_NAME = 'MOCK_DATA.csv'
+# # Setup logger
+# logging.basicConfig(level=logging.INFO)
+# logger = logging.getLogger("S3DataTransfer")
+# def main():
+#     logger.info('Starting the S3 data transfer script')
+#     print('Starting the S3 data transfer script')
+#     # Initialize Spark session
+#     spark = SparkSession.builder \
+#         .appName("S3DataTransfer") \
+#         .getOrCreate()
+#     logger.info('Reading CSV file from S3')
+#     print('Reading CSV file from S3')
+#     # Read CSV from S3
+#     df = spark.read.csv(f's3a://{AWS_S3_BUCKET_NAME}/{INPUT_FOLDER}{FILE_NAME}', header=True, inferSchema=True)
+#     logger.info(f"Successfully fetched file from S3: {FILE_NAME}")
+#     print(f"Successfully fetched file from S3: {FILE_NAME}")
+#     # Writing the DataFrame to S3 without any modification
+#     logger.info('Uploading file to S3')
+#     print('Uploading file to S3')
+#     df.write.csv(f's3a://{AWS_S3_BUCKET_NAME}/{OUTPUT_FOLDER}{FILE_NAME}', header=True, mode='overwrite')
+#     logger.info(f"Successfully uploaded file to S3: {OUTPUT_FOLDER}{FILE_NAME}")
+#     print(f"Successfully uploaded file to S3: {OUTPUT_FOLDER}{FILE_NAME}")
+# if __name__ == '__main__':
+#     main()
+#
+#
+#
+#
+
 
 
 
@@ -170,7 +213,7 @@
 # logger.setLevel(logging.INFO)
 #
 # # Define the ARN of the secret
-# SECRET_ARN = 'https://signin.aws.amazon.com/switchrole?roleName=stsroledecemberborn&account=851725359488'
+# SECRET_ARN = ''
 # REGION_NAME = 'us-east-1'
 #
 # def get_secret(secret_arn, region_name):

@@ -24,6 +24,7 @@ format with compression.'''
 
 
 
+
 '''This AWS Glue script performs an ETL (Extract, Transform, Load) operation where it reads data from the AWS
 Glue Data Catalog, applies a schema transformation, and writes the transformed data to Amazon S3 in Parquet
 format with compression.'''

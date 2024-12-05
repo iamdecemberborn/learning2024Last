@@ -80,4 +80,35 @@ format with compression.'''
 
 
 
+'''This Python script converts all Parquet files in a specified folder ("parquet") into CSV files, saving them in another folder ("outputcsv"). It uses 
+the pandas library to handle file conversions and the os module for file and folder operations. The script defines a convert_parquet_to_csv function to 
+ead a Parquet file into a Pandas DataFrame, save it as a CSV file, and print a confirmation message. The main() function ensures the output folder exists, 
+iterates through all .parquet files in the input folder, and converts each to CSV by calling the conversion function. When executed as the main program, 
+the script automates the entire process, printing success messages upon completion.'''
+# import pandas as pd
+# import os
+# # Paths to input and output folders
+# input_folder = "parquet"
+# output_folder = "outputcsv"
+# def convert_parquet_to_csv(parquet_file_path, csv_file_path):
+#     # Read Parquet file
+#     df = pd.read_parquet(parquet_file_path)
+#     # Write DataFrame to CSV
+#     df.to_csv(csv_file_path, index=False)
+#     print(f"Converted {parquet_file_path} to {csv_file_path}")
+# def main():
+#     print("Starting the Parquet to CSV conversion script")
+#     # Ensure the output folder exists
+#     if not os.path.exists(output_folder):
+#         os.makedirs(output_folder)
+#     # Process each Parquet file in the input folder
+#     for file_name in os.listdir(input_folder):
+#         if file_name.endswith(".parquet"):
+#             parquet_file_path = os.path.join(input_folder, file_name)
+#             csv_file_path = os.path.join(output_folder, file_name.replace(".parquet", ".csv"))
+#             convert_parquet_to_csv(parquet_file_path, csv_file_path)
+#     print("Successfully converted all Parquet files to CSV format")
+# if __name__ == '__main__':
+#     main()
+
 

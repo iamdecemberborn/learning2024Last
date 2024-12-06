@@ -24,10 +24,10 @@ format with compression.'''
 
 
 
-#
-# '''This AWS Glue script performs an ETL (Extract, Transform, Load) operation where it reads data from the AWS
-# Glue Data Catalog, applies a schema transformation, and writes the transformed data to Amazon S3 in Parquet
-# format with compression.'''
+
+'''This AWS Glue script performs an ETL (Extract, Transform, Load) operation where it reads data from the AWS
+Glue Data Catalog, applies a schema transformation, and writes the transformed data to Amazon S3 in Parquet
+format with compression.'''
 # import sys
 # from awsglue.transforms import *
 # from awsglue.utils import getResolvedOptions
@@ -110,5 +110,8 @@ the script automates the entire process, printing success messages upon completi
 #     print("Successfully converted all Parquet files to CSV format")
 # if __name__ == '__main__':
 #     main()
+
+
+
 
 

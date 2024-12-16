@@ -117,31 +117,31 @@ the script automates the entire process, printing success messages upon completi
 
 
 
-import pandas as pd
-import os
-# Paths to input and output folders
-input_folder = "parquet"
-output_folder = "outputcsv"
-def convert_parquet_to_csv(parquet_file_path, csv_file_path):
-    # Read Parquet file
-    df = pd.read_parquet(parquet_file_path)
-    # Write DataFrame to CSV
-    df.to_csv(csv_file_path, index=False)
-    print(f"Converted {parquet_file_path} to {csv_file_path}")
-def main():
-    print("Starting the Parquet to CSV conversion script")
-    # Ensure the output folder exists
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
-    # Process each Parquet file in the input folder
-    for file_name in os.listdir(input_folder):
-        if file_name.endswith(".parquet"):
-            parquet_file_path = os.path.join(input_folder, file_name)
-            csv_file_path = os.path.join(output_folder, file_name.replace(".parquet", ".csv"))
-            convert_parquet_to_csv(parquet_file_path, csv_file_path)
-    print("Successfully converted all Parquet files to CSV format")
-if __name__ == '__main__':
-    main()
+# import pandas as pd
+# import os
+# # Paths to input and output folders
+# input_folder = "parquet"
+# output_folder = "outputcsv"
+# def convert_parquet_to_csv(parquet_file_path, csv_file_path):
+#     # Read Parquet file
+#     df = pd.read_parquet(parquet_file_path)
+#     # Write DataFrame to CSV
+#     df.to_csv(csv_file_path, index=False)
+#     print(f"Converted {parquet_file_path} to {csv_file_path}")
+# def main():
+#     print("Starting the Parquet to CSV conversion script")
+#     # Ensure the output folder exists
+#     if not os.path.exists(output_folder):
+#         os.makedirs(output_folder)
+#     # Process each Parquet file in the input folder
+#     for file_name in os.listdir(input_folder):
+#         if file_name.endswith(".parquet"):
+#             parquet_file_path = os.path.join(input_folder, file_name)
+#             csv_file_path = os.path.join(output_folder, file_name.replace(".parquet", ".csv"))
+#             convert_parquet_to_csv(parquet_file_path, csv_file_path)
+#     print("Successfully converted all Parquet files to CSV format")
+# if __name__ == '__main__':
+#     main()
 
 
 
